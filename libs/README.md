@@ -1,2 +1,0 @@
-# The libs directory
-The libs directory is a location where the developer can provide any dependencies that are not able to be deployed using the standard dependency resolution system for the selected runtime. In the case of PHP, the standard convention that OpenShift Origin uses is providing PEAR modules in the deplist.txt file.
