@@ -6,6 +6,8 @@
 # could be python, php, ruby, etc.
 
 
+ls ${OPENSHIFT_HOMEDIR}
+
 # Dynamic variables
 
 export DJANGO_PROJECT_NAME='mysite';
@@ -17,7 +19,7 @@ export OPENSHIFT_PYTHON_VIRTUAL_ENVIRONMENT="${OPENSHIFT_PYTHON_DIR}/virtenv/ven
 export OPENSHIFT_PYTHON_WSGI_APPLICATION="${DJANGO_PROJECT_NAME}/${DJANGO_PROJECT_NAME}/wsgi.py";
 export OPENSHIFT_PYTHON_REQUIREMENTS_PATH="${OPENSHIFT_HOMEDIR}requirements/${DJANGO_PROJECT_PIPELINE_ENVIRONMENT}.txt";
 
-ls ${OPENSHIFT_HOMEDIR}
+
 
 # Activate VirtualEnv in order to use the correct libraries
 
