@@ -5,3 +5,4 @@
 # before the build step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
 
+# TODO: print a warning when the necessary vars aren't set
