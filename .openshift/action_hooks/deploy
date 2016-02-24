@@ -7,10 +7,5 @@
 
 # From here down it all should be automatic
 
-if [ ! -f "$OPENSHIFT_DATA_DIR"secrets.json ]; then
-	echo "Generating ${OPENSHIFT_DATA_DIR}secrets.json";
-	python ${OPENSHIFT_REPO_DIR}libs/secrets.py > ${OPENSHIFT_DATA_DIR}secrets.json;
-fi
-
-python "${OPENSHIFT_REPO_DIR}${DJANGO_MANAGE_PATH} migrate --noinput";
-python "${OPENSHIFT_REPO_DIR}${DJANGO_MANAGE_PATH} collectstatic --noinput";
+python "${OPENSHIFT_REPO_DIR}${DJANGO_MANAGE_PATH}" migrate --noinput;
+# python "${OPENSHIFT_REPO_DIR}${DJANGO_MANAGE_PATH}" collectstatic --noinput;
