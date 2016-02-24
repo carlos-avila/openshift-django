@@ -5,17 +5,3 @@
 # before the build step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
 
-# Project name
-export DJANGO_PROJECT_NAME='mysite';
-
-# Pipeline
-export DJANGO_PROJECT_PIPELINE_ENVIRONMENT='development'
-
-# Virtual Env location
-export OPENSHIFT_PYTHON_VIRTUAL_ENVIRONMENT="${OPENSHIFT_PYTHON_DIR}/virtenv/venv/"
-
-# Django WSGI
-export OPENSHIFT_PYTHON_WSGI_APPLICATION="${DJANGO_PROJECT_NAME}/${DJANGO_PROJECT_NAME}/wsgi.py";
-
-# Pip requirements file location
-export OPENSHIFT_PYTHON_REQUIREMENTS_PATH="${DJANGO_PROJECT_NAME}/requirements/${DJANGO_PROJECT_PIPELINE_ENVIRONMENT}.txt";
