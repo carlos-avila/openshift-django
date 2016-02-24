@@ -5,10 +5,6 @@
 # before the deploy step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
 
-
-ls -lash ${OPENSHIFT_HOMEDIR}
-ls -lash ${OPENSHIFT_REPO_DIR}
-
 # Dynamic variables
 
 export DJANGO_PROJECT_NAME='mysite';
@@ -17,10 +13,8 @@ export DJANGO_PROJECT_PIPELINE_ENVIRONMENT='development'
 # From here down it all should be automatic
 
 export OPENSHIFT_PYTHON_VIRTUAL_ENVIRONMENT="${OPENSHIFT_PYTHON_DIR}/virtenv/venv/"
-export OPENSHIFT_PYTHON_WSGI_APPLICATION="${DJANGO_PROJECT_NAME}/${DJANGO_PROJECT_NAME}/wsgi.py";
-export OPENSHIFT_PYTHON_REQUIREMENTS_PATH="${OPENSHIFT_HOMEDIR}requirements/${DJANGO_PROJECT_PIPELINE_ENVIRONMENT}.txt";
-
-
+export OPENSHIFT_PYTHON_WSGI_APPLICATION="${OPENSHIFT_REPO_DIR}${DJANGO_PROJECT_NAME}/{DJANGO_PROJECT_NAME}/wsgi.py";
+export OPENSHIFT_PYTHON_REQUIREMENTS_PATH="${OPENSHIFT_REPO_DIR}requirements/${DJANGO_PROJECT_PIPELINE_ENVIRONMENT}.txt";
 
 # Activate VirtualEnv in order to use the correct libraries
 
