@@ -7,6 +7,7 @@
 
 
 ls -lash ${OPENSHIFT_HOMEDIR}
+ls -lash ${OPENSHIFT_REPO_DIR}
 
 # Dynamic variables
 
