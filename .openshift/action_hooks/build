@@ -8,3 +8,5 @@
 # Activate VirtualEnv in order to use the correct libraries
 
 source "${OPENSHIFT_PYTHON_VIRTUAL}/bin/activate"
+
+pip install -r ${OPENSHIFT_PYTHON_REQUIREMENTS_PATH}
