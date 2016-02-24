@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# This is a simple script and will be executed on your CI system if 
+# available.  Otherwise it will execute while your application is stopped
+# before the build step.  This script gets executed directly, so it
+# could be python, php, ruby, etc.
+
+rhc env set DJANGO_PROJECT_NAME='openshift-django';
+rhc env set OPENSHIFT_PYTHON_VIRTUAL="${OPENSHIFT_PYTHON_DIR}/virtenv/venv/"
+
+#rhc env set OPENSHIFT_PYTHON_WSGI_APPLICATION="${DJANGO_PROJECT_NAME}/${DJANGO_PROJECT_NAME}/wsgi.py";
+#rhc env set OPENSHIFT_PYTHON_REQUIREMENTS_PATH="${DJANGO_PROJECT_NAME}/requirements/openshift.txt";
