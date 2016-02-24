@@ -6,7 +6,7 @@
 # could be python, php, ruby, etc.
 
 
-ls ${OPENSHIFT_HOMEDIR}
+ls -lash ${OPENSHIFT_HOMEDIR}
 
 # Dynamic variables
 
