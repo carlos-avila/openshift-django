@@ -8,4 +8,4 @@
 # From here down it all should be automatic
 
 python "${OPENSHIFT_REPO_DIR}${DJANGO_MANAGE_PATH}" migrate --noinput;
-# python "${OPENSHIFT_REPO_DIR}${DJANGO_MANAGE_PATH}" collectstatic --noinput;
+python "${OPENSHIFT_REPO_DIR}${DJANGO_MANAGE_PATH}" collectstatic --noinput;

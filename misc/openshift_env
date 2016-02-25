@@ -1,4 +1,0 @@
-DJANGO_MANAGE_PATH="mysite/manage.py"
-DJANGO_PROJECT_CONFIG_PATH="mysite/mysite/"
-OPENSHIFT_PYTHON_WSGI_APPLICATION="mysite/mysite/wsgi.py"
-OPENSHIFT_PYTHON_REQUIREMENTS_PATH="requirements/development.txt"

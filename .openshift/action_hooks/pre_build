@@ -5,4 +5,26 @@
 # before the build step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
 
-# TODO: print a warning when the necessary vars aren't set
+if [ -z ${DJANGO_MANAGE_PATH+x} ];
+
+    then echo "ERROR: Environment variable DJANGO_MANAGE_PATH is not set."
+
+fi
+
+if [ -z ${DJANGO_PROJECT_CONFIG_PATH+x} ];
+
+    then echo "ERROR: Environment variable DJANGO_PROJECT_CONFIG_PATH is not set."
+
+fi
+
+if [ -z ${OPENSHIFT_PYTHON_WSGI_APPLICATION+x} ];
+
+    then echo "ERROR: Environment variable OPENSHIFT_PYTHON_WSGI_APPLICATION is not set."
+
+fi
+
+if [ -z ${OPENSHIFT_PYTHON_REQUIREMENTS_PATH+x} ];
+
+    then echo "ERROR: Environment variable OPENSHIFT_PYTHON_REQUIREMENTS_PATH is not set."
+
+fi
