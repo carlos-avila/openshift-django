@@ -11,12 +11,6 @@ if [ -z ${DJANGO_MANAGE_PATH+x} ];
 
 fi
 
-if [ -z ${DJANGO_PROJECT_CONFIG_PATH+x} ];
-
-    then echo "ERROR: Environment variable DJANGO_PROJECT_CONFIG_PATH is not set."
-
-fi
-
 if [ -z ${OPENSHIFT_PYTHON_WSGI_APPLICATION+x} ];
 
     then echo "ERROR: Environment variable OPENSHIFT_PYTHON_WSGI_APPLICATION is not set."
