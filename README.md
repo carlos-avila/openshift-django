@@ -27,20 +27,25 @@ Add this upstream repo:
 
 Create your Django project:
 
-    django-admin startproject mydjangoproject .
+    cd wsgi/application
+    django-admin startproject mydjangoproject
 
 Create a superuser:
 
     python manage.py createsuperuser
 
-Add STATIC_ROOT to your django settings.py
+Add STATIC_ROOT to the default settings.py:
 
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
+
+Add a new entry to PYTHONPATH in the default wsgi.py:
+
+    sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 Set the necessary OpenShift environment variables:
 
-    rhc env set DJANGO_MANAGE_PATH=manage.py
-    rhc env set OPENSHIFT_PYTHON_WSGI_APPLICATION=mydjangoproject/wsgi.py
+    rhc env set DJANGO_MANAGE_PATH=wsgi/application/manage.py
+    rhc env set OPENSHIFT_PYTHON_WSGI_APPLICATION=wsgi/application/mydjangoproject/wsgi.py
     rhc env set OPENSHIFT_PYTHON_REQUIREMENTS_PATH=requirements/development.txt
 
 Update setup with your information:
@@ -53,7 +58,7 @@ Then push the repo upstream
     git commit -m "Django project init"
     git push
 	
-That's it. You can now checkout your application at:
+That's it. Watch the build process and checkout your application at:
 
     http://django-mydjangoproject.rhcloud.com
 
@@ -90,5 +95,6 @@ Standard OpenShift Environment Variables
 Python Environment Variables
 ----------------------------
 
+* OPENSHIFT_PYTHON_DOCUMENT_ROOT Set the DocumentRoot used by Apache, eg. using the ``rhc env set OPENSHIFT_PYTHON_DOCUMENT_ROOT=/var/www/html``
 * OPENSHIFT_PYTHON_WSGI_APPLICATION Set custom path to the WSGI entry-point, eg. using the ``rhc env set OPENSHIFT_PYTHON_WSGI_APPLICATION=app/altenative-wsgi.py`` command.
 * OPENSHIFT_PYTHON_REQUIREMENTS_PATH Set custom path to the pip requirements file, eg. using the ``rhc env set OPENSHIFT_PYTHON_REQUIREMENTS_PATH=requirements/production.txt`` command.
