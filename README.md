@@ -49,6 +49,8 @@ Update setup with your information:
 
 Then push the repo upstream
 
+    git add .
+    git commit -m "Django project init"
     git push
 	
 That's it. You can now checkout your application at:
