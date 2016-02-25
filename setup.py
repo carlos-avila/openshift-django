@@ -2,14 +2,6 @@
 
 from setuptools import setup
 
-# TODO: automate all the following
-# TODO: rhc app create bla blab
-# TODO: git add upstream
-# TODO: rm requirements.txt wsgi.py
-# TODO: django-admin startproject
-# TODO: deply collectstatic requires STATIC_ROOT in settings: STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# TODO: rhc env set vars
-
 setup(
 
     # GETTING-STARTED: set your app name:
@@ -31,3 +23,4 @@ setup(
     url='http://www.python.org/sigs/distutils-sig/',
 
 )
+5

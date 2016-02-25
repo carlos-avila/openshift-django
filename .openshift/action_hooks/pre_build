@@ -8,17 +8,20 @@
 if [ -z ${DJANGO_MANAGE_PATH+x} ];
 
     then echo "ERROR: Environment variable DJANGO_MANAGE_PATH is not set."
+    exit 1;
 
 fi
 
 if [ -z ${OPENSHIFT_PYTHON_WSGI_APPLICATION+x} ];
 
     then echo "ERROR: Environment variable OPENSHIFT_PYTHON_WSGI_APPLICATION is not set."
+    exit 1;
 
 fi
 
 if [ -z ${OPENSHIFT_PYTHON_REQUIREMENTS_PATH+x} ];
 
     then echo "ERROR: Environment variable OPENSHIFT_PYTHON_REQUIREMENTS_PATH is not set."
+    exit 1;
 
 fi
